@@ -30,6 +30,22 @@ RABBITMQ_API_PASS = 'your_pass'
 RABBITMQ_VHOST    = '/'
 ```
 
+## 启用RabbitMQ Management Plugin
+
+RabbitMQ Management Plugin用于提供Web管理界面和HTTP API，需在RabbitMQ服务器上启用。
+
+1. 登录RabbitMQ服务器，执行以下命令：
+
+```bash
+rabbitmq-plugins enable rabbitmq_management
+```
+
+2. 启用后，默认Web管理界面和API监听在`15672`端口。
+   - Web管理界面地址：http://<your_host>:15672/
+   - HTTP API地址：http://<your_host>:15672/api/
+
+3. 如需远程访问，请确保防火墙已放行15672端口。
+
 ## 接口说明
 
 ### 1. 查看所有队列
